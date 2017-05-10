@@ -7,10 +7,13 @@
 import React, { Component } from 'react';
 import {
   AppRegistry,
+  requireNativeComponent,
   StyleSheet,
   Text,
   View
 } from 'react-native';
+
+const SampleView = requireNativeComponent('SampleView', ReactNativeSwiftBridge);
 
 export default class ReactNativeSwiftBridge extends Component {
   render() {
@@ -26,6 +29,9 @@ export default class ReactNativeSwiftBridge extends Component {
           Press Cmd+R to reload,{'\n'}
           Cmd+D or shake for dev menu
         </Text>
+        <View style={{backgroundColor:'yellow',margin:10}}>
+          <SampleView title="This is my title" height={60} width={225}/>
+        </View>
       </View>
     );
   }
